@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="#FFFFFF"
+    tools:context=".activities.Onboarding1"
+    tools:targetApi="s">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ImageView
+        android:id="@+id/savings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/trainedpros"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/services" />
+
+    <TextView
+        android:id="@+id/trainedPro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/trained_pro"
+        android:layout_below="@id/savings"
+        android:textAppearance="@style/trained_pro"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/we_give_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/you_get_tra"
+        android:layout_below="@id/trainedPro"
+        android:textAppearance="@style/you_get_tra"
+        android:gravity="center_vertical" />
+
+    <Button
+        android:id="@+id/getStartedBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:text="@string/getStarted"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/dark_green"
+        android:layout_below="@+id/we_give_you"/>
+
+</RelativeLayout>

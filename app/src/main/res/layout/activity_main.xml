@@ -19,14 +19,4 @@
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/logo" />
 
-    <TextView
-        android:id="@+id/pleaseWait"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:text="@string/please_wait"
-        android:textSize="25sp"
-        android:textStyle="italic" />
-
 </LinearLayout>

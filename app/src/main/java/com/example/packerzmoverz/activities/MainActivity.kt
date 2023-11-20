@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         coroutineScope.launch {
-            delay(5000)
+            delay(3000)
             startLogin()
         }
     }

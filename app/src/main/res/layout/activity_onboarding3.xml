@@ -15,18 +15,6 @@
         layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp"
-        android:text="@string/skip"
-        android:textAppearance="@style/skip"
-        android:gravity="center_vertical" />
-
-    <TextView
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,35 +27,35 @@
         android:gravity="center_vertical" />
 
     <ImageView
-        android:id="@+id/truck"
+        android:id="@+id/savings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/truck"
+        android:src="@drawable/savings"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/truck" />
+        android:contentDescription="@string/services" />
 
     <TextView
-        android:id="@+id/fast_conven"
+        android:id="@+id/friendly_bu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/fast_conven"
-        android:layout_below="@+id/truck"
-        android:textAppearance="@style/fast_conven"
+        android:text="@string/friendly_bu"
+        android:layout_below="@id/savings"
+        android:textAppearance="@style/friendly_bu"
         android:gravity="center_vertical" />
 
     <TextView
-        android:id="@+id/don_t_worry"
+        android:id="@+id/we_give_you"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/don_t_worry"
-        android:layout_below="@id/fast_conven"
-        android:textAppearance="@style/don_t_worry"
+        android:text="@string/we_give_you"
+        android:layout_below="@id/friendly_bu"
+        android:textAppearance="@style/we_give_you"
         android:gravity="center_vertical" />
 
 </RelativeLayout>

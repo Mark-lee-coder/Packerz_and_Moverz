@@ -39,35 +39,35 @@
         android:gravity="center_vertical" />
 
     <ImageView
-        android:id="@+id/truck"
+        android:id="@+id/savings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/truck"
+        android:src="@drawable/services"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/truck" />
+        android:contentDescription="@string/services" />
 
     <TextView
-        android:id="@+id/fast_conven"
+        android:id="@+id/services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/fast_conven"
-        android:layout_below="@+id/truck"
-        android:textAppearance="@style/fast_conven"
+        android:text="@string/services"
+        android:layout_below="@+id/savings"
+        android:textAppearance="@style/services"
         android:gravity="center_vertical" />
 
     <TextView
-        android:id="@+id/don_t_worry"
+        android:id="@+id/we_provide_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/don_t_worry"
-        android:layout_below="@id/fast_conven"
-        android:textAppearance="@style/don_t_worry"
+        android:text="@string/we_provide_"
+        android:layout_below="@id/services"
+        android:textAppearance="@style/we_provide_"
         android:gravity="center_vertical" />
 
 </RelativeLayout>
