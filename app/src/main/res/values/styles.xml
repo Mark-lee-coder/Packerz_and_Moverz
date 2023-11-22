@@ -1,54 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- dark mode and light mode -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Other attributes -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Add other theme attributes for dark mode -->
+    </style>
+
     <style name="next">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#018488</item>
+        <item name="android:textColor">@color/dark_green</item>
     </style>
 
     <style name="skip">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#018488</item>
+        <item name="android:textColor">@color/dark_green</item>m>
     </style>
 
-    <style name="fast_conven">
+    <style name="onboardingTitle">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="don_t_worry">
+    <style name="onboardingText">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="services">
+    <style name="email_password">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="we_provide_">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">#000000</item>
-    </style>
-
-    <style name="friendly_bu">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#000000</item>
-    </style>
-
-    <style name="we_give_you">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">#000000</item>
-    </style>
-
-    <style name="trained_pro">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#000000</item>
-    </style>
-
-    <style name="you_get_tra">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">#000000</item>
+    <style name="tvLogin">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

@@ -56,7 +56,7 @@
         android:layout_centerVertical="true"
         android:text="@string/services"
         android:layout_below="@+id/savings"
-        android:textAppearance="@style/services"
+        android:textAppearance="@style/onboardingTitle"
         android:gravity="center_vertical" />
 
     <TextView
@@ -67,7 +67,7 @@
         android:layout_centerVertical="true"
         android:text="@string/we_provide_"
         android:layout_below="@id/services"
-        android:textAppearance="@style/we_provide_"
+        android:textAppearance="@style/onboardingText"
         android:gravity="center_vertical" />
 
 </RelativeLayout>

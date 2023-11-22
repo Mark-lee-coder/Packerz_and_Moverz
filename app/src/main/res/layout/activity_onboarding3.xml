@@ -44,7 +44,7 @@
         android:layout_centerVertical="true"
         android:text="@string/friendly_bu"
         android:layout_below="@id/savings"
-        android:textAppearance="@style/friendly_bu"
+        android:textAppearance="@style/onboardingTitle"
         android:gravity="center_vertical" />
 
     <TextView
@@ -55,7 +55,7 @@
         android:layout_centerVertical="true"
         android:text="@string/we_give_you"
         android:layout_below="@id/friendly_bu"
-        android:textAppearance="@style/we_give_you"
+        android:textAppearance="@style/onboardingText"
         android:gravity="center_vertical" />
 
 </RelativeLayout>

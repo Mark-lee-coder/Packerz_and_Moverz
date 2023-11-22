@@ -56,7 +56,7 @@
         android:layout_centerVertical="true"
         android:text="@string/fast_conven"
         android:layout_below="@+id/truck"
-        android:textAppearance="@style/fast_conven"
+        android:textAppearance="@style/onboardingTitle"
         android:gravity="center_vertical" />
 
     <TextView
@@ -67,7 +67,7 @@
         android:layout_centerVertical="true"
         android:text="@string/don_t_worry"
         android:layout_below="@id/fast_conven"
-        android:textAppearance="@style/don_t_worry"
+        android:textAppearance="@style/onboardingText"
         android:gravity="center_vertical" />
 
 </RelativeLayout>

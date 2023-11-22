@@ -32,7 +32,7 @@
         android:layout_centerVertical="true"
         android:text="@string/trained_pro"
         android:layout_below="@id/savings"
-        android:textAppearance="@style/trained_pro"
+        android:textAppearance="@style/onboardingTitle"
         android:gravity="center_vertical" />
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_centerVertical="true"
         android:text="@string/you_get_tra"
         android:layout_below="@id/trainedPro"
-        android:textAppearance="@style/you_get_tra"
+        android:textAppearance="@style/onboardingText"
         android:gravity="center_vertical" />
 
     <Button
