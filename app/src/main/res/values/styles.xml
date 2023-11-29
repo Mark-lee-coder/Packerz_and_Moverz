@@ -39,4 +39,19 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="forgot_pass">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="new_here_">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="sign_up">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
 </resources>
