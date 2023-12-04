@@ -3,15 +3,17 @@ package com.example.packerzmoverz.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.packerzmoverz.R
 
 class Home : AppCompatActivity() {
+    private var backPressedOnce = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-    }
 
-    private var backPressedOnce = false
+    }
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {

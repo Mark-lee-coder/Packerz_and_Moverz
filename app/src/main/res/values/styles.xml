@@ -54,4 +54,30 @@
         <item name="android:textColor">@color/blue</item>
     </style>
 
+    <style name="already_hav">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="log_in">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="registration">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="you_are_now">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="you_will_au">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

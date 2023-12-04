@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"
-            android:text="@string/log_in"
+            android:text="@string/log_inCaps"
             style="@style/tvLogin"/>
 
         <com.google.android.material.textfield.TextInputLayout

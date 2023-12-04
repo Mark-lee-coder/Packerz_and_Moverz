@@ -30,7 +30,7 @@ class Login : AppCompatActivity() {
         etPassword.transformationMethod = PasswordTransformationMethod.getInstance() // Start with hidden password
 
         signIn.setOnClickListener {
-            val textEmail: String = etEmail.text.toString().trim()
+            val textEmail = etEmail.text.toString().trim()
             val textPassword = etPassword.text.toString()
 
             if (textEmail.isEmpty()) {
@@ -59,12 +59,10 @@ class Login : AppCompatActivity() {
             }
 
             else {
-                val snackbar = Snackbar.make(
-                    findViewById(android.R.id.content),
+                val snackbar = Snackbar.make(findViewById(android.R.id.content),
                     "A password reset link has been sent to your email",
                     Snackbar.LENGTH_INDEFINITE
                 )
-
                 snackbar.show()
                 // Dismiss the Snackbar after 5 seconds
                 val handler = Handler()
@@ -75,6 +73,7 @@ class Login : AppCompatActivity() {
         signUp.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.packerzmoverz.R
 
 class Onboarding2 : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding2)

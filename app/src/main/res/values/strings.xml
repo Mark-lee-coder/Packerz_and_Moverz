@@ -27,10 +27,19 @@
     <string name="enter_your_email">Enter your email</string>
     <string name="password">Password</string>
     <string name="enter_your_password">Enter your password</string>
-    <string name="log_in">LOG IN</string>
+    <string name="log_inCaps">LOG IN</string>
     <string name="remember_me">Remember Me</string>
     <string name="sign_in">SIGN IN</string>
     <string name="forgot_pass">Forgot Password?</string>
     <string name="new_here_">New here?</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sign_upCaps">SIGN UP</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="agree_terms_and_conditions">Agree terms and conditions</string>
+    <string name="already_hav">Already have an account?</string>
+    <string name="log_in">Log In</string>
+    <string name="registration">Registration Successful</string>
+    <string name="you_are_now">You are now registered!</string>
+    <string name="you_will_au">You will automatically be redirected in a few seconds</string>
 </resources>

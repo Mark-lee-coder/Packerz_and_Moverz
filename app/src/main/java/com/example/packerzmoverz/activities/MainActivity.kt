@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         coroutineScope.launch {
             delay(3000)
-            startLogin()
+            startOnboarding()
         }
     }
 
-    private fun startLogin() {
+    private fun startOnboarding() {
         val intent = Intent(this, Onboarding1::class.java)
         startActivity(intent)
         finish()
