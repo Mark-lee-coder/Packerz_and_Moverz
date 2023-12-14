@@ -18,7 +18,6 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
-        val etEmail: EditText = findViewById(R.id.etEmail)
         val etPassword: EditText = findViewById(R.id.etPassword)
         val signIn: Button = findViewById(R.id.sign_in)
         val forgotPass: TextView = findViewById(R.id.forgot_pass)
@@ -30,15 +29,11 @@ class Login : AppCompatActivity() {
         etPassword.transformationMethod = PasswordTransformationMethod.getInstance() // Start with hidden password
 
         signIn.setOnClickListener {
-            val textEmail = etEmail.text.toString().trim()
             val textPassword = etPassword.text.toString()
 
-            if (textEmail.isEmpty()) {
-                etEmail.error = "Please enter your email!"
-                etEmail.requestFocus()
-            }
 
-            else if (textPassword.isEmpty()) {
+
+            if (textPassword.isEmpty()) {
                 etPassword.error = "Please enter your password!"
                 etPassword.requestFocus()
             }
@@ -51,14 +46,7 @@ class Login : AppCompatActivity() {
         }
 
         forgotPass.setOnClickListener {
-            val textEmail = etEmail.text.toString().trim()
 
-            if (textEmail.isEmpty()) {
-                etEmail.error = "Please enter your email!"
-                etEmail.requestFocus()
-            }
-
-            else {
                 val snackbar = Snackbar.make(findViewById(android.R.id.content),
                     "A password reset link has been sent to your email",
                     Snackbar.LENGTH_INDEFINITE
@@ -67,7 +55,7 @@ class Login : AppCompatActivity() {
                 // Dismiss the Snackbar after 5 seconds
                 val handler = Handler()
                 handler.postDelayed({ snackbar.dismiss() }, 5000)
-            }
+
         }
 
         signUp.setOnClickListener {

@@ -37,27 +37,26 @@
             style="@style/tvLogin"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutEmail"
+            android:id="@+id/textInputLayoutUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="35dp">
 
             <EditText
                 android:id="@+id/etEmail"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_your_email"
+                android:hint="@string/enter_your_name"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress" />
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             app:endIconMode="password_toggle"
             app:passwordToggleEnabled="true" >
 
@@ -83,7 +82,7 @@
         android:orientation="horizontal" >
 
         <CheckBox
-            android:id="@+id/checkbox"
+            android:id="@+id/cbTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp" />

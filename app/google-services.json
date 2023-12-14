@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "631026563751",
+    "project_id": "packerz-and-moverz-43eac",
+    "storage_bucket": "packerz-and-moverz-43eac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631026563751:android:e7bb6aa14f6fe074ff7982",
+        "android_client_info": {
+          "package_name": "com.example.packerzmoverz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeP9to9YHBaZJql4knWm4LW2ZnCX-d-Tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -37,10 +37,10 @@
             style="@style/tvLogin" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutUsername"
+            android:id="@+id/textInputLayoutName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="30dp">
 
             <EditText
                 android:id="@+id/etName"
@@ -57,7 +57,7 @@
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="30dp">
 
             <EditText
                 android:id="@+id/etEmail"
@@ -74,7 +74,7 @@
             android:id="@+id/textInputLayoutPNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="30dp">
 
             <EditText
                 android:id="@+id/etPNumber"
@@ -83,16 +83,15 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_your_phone_number"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             app:endIconMode="password_toggle"
             app:passwordToggleEnabled="true" >
 
@@ -118,16 +117,17 @@
         android:orientation="horizontal" >
 
         <CheckBox
-            android:id="@+id/checkbox"
+            android:id="@+id/cbTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp" />
 
         <TextView
-            android:id="@+id/tsandcs"
+            android:id="@+id/tvTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/agree_terms_and_conditions" />
+            android:text="@string/agree_terms_and_conditions"
+            android:textColor="@color/blue" />
 
     </LinearLayout>
 
@@ -139,7 +139,7 @@
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:text="@string/sign_upCaps"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/dark_green"
         android:layout_below="@+id/linearLayoutHorizontal" />
 
@@ -147,7 +147,7 @@
         android:id="@+id/linearLayout_Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/sign_up"
         android:orientation="horizontal" >
 

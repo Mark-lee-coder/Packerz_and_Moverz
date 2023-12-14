@@ -24,7 +24,7 @@ class Onboarding1 : AppCompatActivity() {
 
         val skip: TextView = findViewById(R.id.skip)
         skip.setOnClickListener {
-            val intent = Intent(this, GetStarted::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
             finish()
         }
