@@ -1,5 +1,7 @@
 package com.example.packerzmoverz.constructors;
 
+import org.jetbrains.annotations.NotNull;
+
 public class User {
         public String textName, textEmail, textPNumber, textPassword;
 
