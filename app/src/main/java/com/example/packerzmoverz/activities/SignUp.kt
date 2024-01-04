@@ -11,8 +11,10 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.example.packerzmoverz.R
 import com.example.packerzmoverz.constructors.User
 import com.google.android.material.snackbar.Snackbar
@@ -72,7 +74,7 @@ class SignUp : AppCompatActivity() {
             }
 
             else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()){
-                etEmail.error = "Please provide a valid email"
+                etEmail.error = "Please provide a valid email!"
                 etEmail.requestFocus()
             }
 
@@ -81,99 +83,96 @@ class SignUp : AppCompatActivity() {
                 etPNumber.requestFocus()
             }
 
-            else {
-                val countryCodePattern = """^\+\d{1,3}\d+${'$'}""".toRegex()
+            else if (textPNumber.length != 10) {
+                etPNumber.error = "Phone number should have 10 characters!"
+                etPNumber.requestFocus()
+            }
 
-                if (!textPNumber.matches(countryCodePattern)) {
-                    etPNumber.error = "Please provide a valid phone number with country code!"
-                    etPNumber.requestFocus()
+            else if (textPassword.isEmpty()) {
+                etPassword.error = "Please enter new password!"
+                etPassword.requestFocus()
+            }
+
+            else {
+                fun isPasswordValid(password: String): Boolean {
+                    val minLength = 8
+                    val hasUppercase = password.any { it.isUpperCase() }
+                    val hasLowercase = password.any { it.isLowerCase() }
+                    val hasDigit = password.any { it.isDigit() }
+                    val hasSpecial = password.any { !it.isLetterOrDigit() }
+
+                    return password.length >= minLength &&
+                            hasUppercase &&
+                            hasLowercase &&
+                            hasDigit &&
+                            hasSpecial
                 }
 
-                else if (textPassword.isEmpty()) {
-                    etPassword.error = "Please enter your password!"
-                    etPassword.requestFocus()
+                if (!isPasswordValid(textPassword)) {
+                        etPassword.error = "Please provide a strong password!"
+                        etPassword.requestFocus()
+                }
+
+                else if (!cbTerms.isChecked) {
+                    val snackbar = Snackbar.make(findViewById(android.R.id.content),
+                        "Kindly agree to Terms and Conditions to continue",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                    snackbar.show()
+
+                    val handler = Handler()
+                    handler.postDelayed({ snackbar.dismiss() }, 5000)
                 }
 
                 else {
-                    fun isPasswordValid(password: String): Boolean {
-                        val minLength = 8
-                        val hasUppercase = password.any { it.isUpperCase() }
-                        val hasLowercase = password.any { it.isLowerCase() }
-                        val hasDigit = password.any { it.isDigit() }
-                        val hasSpecial = password.any { !it.isLetterOrDigit() }
+                    val progressDialog = ProgressDialog(this@SignUp)
+                    progressDialog.show()
+                    progressDialog.setContentView(R.layout.progress_dialog)
+                    progressDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
 
-                        return password.length >= minLength &&
-                                hasUppercase &&
-                                hasLowercase &&
-                                hasDigit &&
-                                hasSpecial
-                    }
+                    firebaseAuth.createUserWithEmailAndPassword(textEmail, textPassword)
+                        .addOnCompleteListener { task ->
+                           if (task.isSuccessful) {
+                               firebaseAuth.currentUser?.sendEmailVerification()?.addOnCompleteListener { emailTask ->
+                                   progressDialog.dismiss()
+                                   if (emailTask.isSuccessful) {
+                                       val user = User(textName, textEmail, textPNumber, textPassword)
+                                       FirebaseDatabase.getInstance().getReference("TableUsers")
+                                           .child(FirebaseAuth.getInstance().currentUser?.uid ?: "")
+                                           .setValue(user)
+                                           .addOnCompleteListener { databaseTask ->
+                                               if (databaseTask.isSuccessful) {
+                                                   val builder = AlertDialog.Builder(this)
+                                                   builder.setMessage("Registration successful, a verification link has been sent to your email")
+                                                   builder.setPositiveButton("OK") { _, _ ->
+                                                       val intent = Intent(this, Login::class.java)
+                                                       startActivity(intent)
+                                                       finish()
+                                                   }
+                                                   val alertDialog = builder.create()
+                                                   alertDialog.show()
+                                               }
 
-                    if (!isPasswordValid(textPassword)) {
-                        etPassword.error = "Please provide a strong password!"
-                        etPassword.requestFocus()
-                    }
+                                               else {
+                                                   // Failed to add user details to the database
+                                                   Toast.makeText(this, "Registration failed!", Toast.LENGTH_LONG).show()
+                                               }
+                                           }
+                                   }
 
-                    else if (!cbTerms.isChecked) {
-                        val snackbar = Snackbar.make(findViewById(android.R.id.content),
-                            "Kindly agree to Terms and Conditions to continue",
-                            Snackbar.LENGTH_INDEFINITE
-                        )
-                        snackbar.show()
+                                   else {
+                                       Toast.makeText(this, emailTask.exception?.message, Toast.LENGTH_LONG).show()
+                                   }
+                               }
+                           }
 
-                        val handler = Handler()
-                        handler.postDelayed({ snackbar.dismiss() }, 5000)
-                    }
-
-                    else {
-                        val progressDialog = ProgressDialog(this@SignUp)
-                        progressDialog.show()
-                        progressDialog.setContentView(R.layout.progress_dialog)
-                        progressDialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
-
-                        val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-                            .setPhoneNumber(textPNumber) // User's phone number to verify
-                            .setTimeout(60L, TimeUnit.SECONDS) // Timeout duration for the code sent
-                            .setActivity(this) // Activity context
-                            .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                                override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                                    // Phone number automatically verified or instant validation
-                                    // Proceed with user creation or registration
-                                    // Create user with phone number as an example
-                                    val user = User(textName, textEmail, textPNumber, textPassword)
-
-                                    // Add user details to the database
-                                    FirebaseDatabase.getInstance().getReference("TableUsers")
-                                        .child(FirebaseAuth.getInstance().currentUser?.uid ?: "")
-                                        .setValue(user)
-                                        .addOnCompleteListener { databaseTask ->
-                                            if (databaseTask.isSuccessful) {
-                                                progressDialog.dismiss()
-                                                val intent = Intent(this@SignUp, Login::class.java)
-                                                startActivity(intent)
-                                                finish()
-                                            }
-
-                                            else {
-                                                progressDialog.dismiss()
-                                                // Failed to add user details to the database
-                                                Toast.makeText(this@SignUp, "User registration failed!", Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
-                                }
-
-                                override fun onVerificationFailed(e: FirebaseException) {
-                                    progressDialog.dismiss()
-                                    // Handle verification failure
-                                    // Display error messages or take appropriate actions
-                                    Toast.makeText(this@SignUp, "Verification failed: ${e.message}", Toast.LENGTH_LONG).show()
-                                }
-                            })
-                            .build()
-
-                        // Step 2: Initiate phone number verification
-                        PhoneAuthProvider.verifyPhoneNumber(options)
-                    }
+                           else {
+                               progressDialog.dismiss()
+                               Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                           }
+                       } .addOnFailureListener { e ->
+                               Toast.makeText(this, "Failed: ${e.message}", Toast.LENGTH_LONG).show()
+                       }
                 }
             }
         }

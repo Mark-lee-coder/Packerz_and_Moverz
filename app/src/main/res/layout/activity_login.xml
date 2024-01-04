@@ -17,11 +17,13 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="-25dp"
         android:background="@drawable/background" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutVertical"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -48,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_your_email"
+                android:textColor="@color/black"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress" />
 
@@ -67,32 +70,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_your_password"
+                android:textColor="@color/black"
                 android:importantForAutofill="no"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayoutVertical"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal" >
-
-        <CheckBox
-            android:id="@+id/cbRememberMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp" />
-
-        <TextView
-            android:id="@+id/rememberMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/remember_me" />
 
     </LinearLayout>
 
@@ -106,7 +88,7 @@
         android:text="@string/sign_in"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/dark_green"
-        android:layout_below="@+id/linearLayoutHorizontal" />
+        android:layout_below="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/forgot_pass"
