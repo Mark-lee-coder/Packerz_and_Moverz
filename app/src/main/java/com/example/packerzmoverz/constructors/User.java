@@ -1,15 +1,13 @@
 package com.example.packerzmoverz.constructors;
 
-import org.jetbrains.annotations.NotNull;
-
 public class User {
-        public String textName, textEmail, textPNumber, textPassword;
+        public String UserName, UserEmail, PhoneNumber, Password;
 
-        public User(String textName, String textEmail, String textPNumber, String textPassword) {
-            this.textName = textName;
-            this.textEmail = textEmail;
-            this.textPNumber = textPNumber;
-            this.textPassword = textPassword;
+        public User(String UserName, String UserEmail, String PhoneNumber, String Password) {
+            this.UserName = UserName;
+            this.UserEmail = UserEmail;
+            this.PhoneNumber = PhoneNumber;
+            this.Password = Password;
         }
 
         public User() {

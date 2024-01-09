@@ -5,9 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.text.method.PasswordTransformationMethod
-import android.util.Patterns
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -16,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.packerzmoverz.R
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.play.core.integrity.e
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -90,7 +87,6 @@ class Login : AppCompatActivity() {
                     else {
                         progressDialog.dismiss()
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-                        etEmail.setText("")
                         etPassword.setText("")
                     }
                 }

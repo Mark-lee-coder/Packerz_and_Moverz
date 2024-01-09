@@ -19,33 +19,35 @@ class MainActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
 
         if (user != null && user.isEmailVerified) {
-            val email = user.email
-            val query = FirebaseDatabase.getInstance().reference.child("TableUsers").orderByChild("email").equalTo(email)
+            val textEmail = user.email
+            val query = FirebaseDatabase.getInstance().reference.child("TableUsers")
+                .orderByChild("userEmail").equalTo(textEmail)
 
             query.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        Toast.makeText(this@MainActivity, "Welcome Back!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@MainActivity, Home::class.java)
                         startActivity(intent)
                         finish()
-                        Toast.makeText(applicationContext, "Welcome Back", Toast.LENGTH_SHORT).show()
                     }
 
                     else {
-                        val intent = Intent(this@MainActivity, Onboarding1::class.java)
+                        val intent = Intent(this@MainActivity, Login::class.java)
                         startActivity(intent)
                         finish()
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-
+                    Toast.makeText(this@MainActivity, "Failed!", Toast.LENGTH_SHORT).show()
+                    finishAffinity()
                 }
             })
         }
 
         else {
-            val intent = Intent(applicationContext, Onboarding1::class.java)
+            val intent = Intent(this@MainActivity, Onboarding1::class.java)
             startActivity(intent)
             finish()
         }
