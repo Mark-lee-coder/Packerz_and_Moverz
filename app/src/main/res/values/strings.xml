@@ -25,7 +25,6 @@
     <string name="enter_your_email"><font fgcolor="#808080">Enter your email</font></string>
     <string name="enter_your_password"><font fgcolor="#808080">Enter your password</font></string>
     <string name="log_inCaps">LOG IN</string>
-    <string name="remember_me"><font fgcolor="#808080">Remember Me</font></string>
     <string name="sign_in">SIGN IN</string>
     <string name="forgot_pass">Forgot Password?</string>
     <string name="new_here_">New here?</string>
@@ -37,4 +36,22 @@
     <string name="already_hav">Already have an account?</string>
     <string name="log_in">Log In</string>
     <string name="enter_new_password"><font fgcolor="#808080">Enter new password</font></string>
+    <string name="search_placeholder">What are you looking for…</string>
+    <string name="search">Search</string>
+    <string name="offers_for_">Offers for you!</string>
+    <string name="image">image</string>
+    <string name="packers_and_movers"><![CDATA[Packers & Movers]]></string>
+    <string name="home_cleaning">Home Cleaning</string>
+    <string name="repairs">Repairs</string>
+    <string name="painting">Painting</string>
+    <string name="location">Location</string>
+    <string name="nairobi">Nairobi</string>
+    <string name="notification">Notification</string>
+    <string name="help">Help</string>
+    <string name="title_activity_home">Home</string>
+    <string name="profile">PROFILE</string>
+    <string name="name">Name:</string>
+    <string name="email">Email:</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="let_s_pack_and_move">Let\'s pack and move!</string>
 </resources>

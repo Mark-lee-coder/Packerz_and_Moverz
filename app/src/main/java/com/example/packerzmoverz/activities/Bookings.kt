@@ -8,41 +8,31 @@ import androidx.appcompat.widget.Toolbar
 import com.example.packerzmoverz.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Home : AppCompatActivity() {
+class Bookings : AppCompatActivity() {
     private var backPressedOnce = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_bookings)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
 
-        bottomNavigationView.selectedItemId = R.id.navigation_home
+        bottomNavigationView.selectedItemId = R.id.navigation_bookings
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.navigation_bookings -> {
-                    val intent = Intent(this@Home, Bookings::class.java)
+                R.id.navigation_home -> {
+                    val intent = Intent(this@Bookings, Home::class.java)
                     startActivity(intent)
                     finish()
-
-                    // Deselect Home
-                    bottomNavigationView.menu.findItem(R.id.navigation_home)?.isChecked = false
-
-                    // Select Bookings
-                    bottomNavigationView.menu.findItem(R.id.navigation_bookings)?.isChecked = true
-
-                    // Deselect Profile
-                    bottomNavigationView.menu.findItem(R.id.navigation_profile)?.isChecked = false
 
                     true
                 }
 
                 R.id.navigation_profile -> {
-                    val intent = Intent(this@Home, Profile::class.java)
+                    val intent = Intent(this@Bookings, Profile::class.java)
                     startActivity(intent)
                     finish()
 

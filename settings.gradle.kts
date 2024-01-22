@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Packerz & Moverz"
 include(":app")
- 
